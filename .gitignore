@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Env
+.env
+*.env.local
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+next-env.d.ts
+tsconfig.tsbuildinfo
+frontend/.env*.local
+
+# Data
+data/raw_pdfs/*
+!data/raw_pdfs/.gitkeep
+data/sample_docs/*.pdf
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Docker volumes
+pgdata/

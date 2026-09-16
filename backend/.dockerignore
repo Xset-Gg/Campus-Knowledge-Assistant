@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+*.log
+data/raw_pdfs/*
+!data/raw_pdfs/.gitkeep
