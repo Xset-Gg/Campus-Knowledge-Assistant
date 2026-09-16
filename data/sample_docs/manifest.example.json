@@ -1,0 +1,53 @@
+[
+  {
+    "file": "../raw_pdfs/cs101_syllabus_2026.pdf",
+    "title": "CS101 Introduction to Computer Science — Syllabus",
+    "department": "Computer Science",
+    "academic_year": 2026,
+    "document_type": "syllabus",
+    "access_level": "student",
+    "source_url": "https://university.edu/docs/cs101-syllabus-2026.pdf"
+  },
+  {
+    "file": "../raw_pdfs/academic_integrity_policy_2026.pdf",
+    "title": "Academic Integrity Policy",
+    "department": "Academic Affairs",
+    "academic_year": 2026,
+    "document_type": "policy",
+    "access_level": "public",
+    "source_url": "https://university.edu/docs/academic-integrity-2026.pdf"
+  },
+  {
+    "file": "../raw_pdfs/registrar_enrollment_policy_2026.pdf",
+    "title": "Enrollment and Withdrawal Policy",
+    "department": "Registrar",
+    "academic_year": 2026,
+    "document_type": "policy",
+    "access_level": "student"
+  },
+  {
+    "file": "../raw_pdfs/faculty_handbook_2026.pdf",
+    "title": "Faculty Handbook",
+    "department": "Academic Affairs",
+    "academic_year": 2026,
+    "document_type": "handbook",
+    "access_level": "faculty"
+  },
+  {
+    "file": "../raw_pdfs/draft_tuition_restructuring.pdf",
+    "title": "DRAFT — Tuition Restructuring Proposal",
+    "department": "Administration",
+    "academic_year": 2026,
+    "document_type": "policy",
+    "access_level": "admin"
+  },
+  {
+    "file": "../raw_pdfs/grading_scale_2024.pdf",
+    "title": "Grading Scale (2024)",
+    "department": "Registrar",
+    "academic_year": 2024,
+    "document_type": "policy",
+    "access_level": "student",
+    "is_current": false
+  }
+]

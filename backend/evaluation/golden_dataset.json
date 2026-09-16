@@ -1,0 +1,658 @@
+{
+  "description": "Golden evaluation set for the Campus Knowledge Assistant. Covers eight departments and five document types, plus two adversarial categories: abstention cases (the honest answer is 'I don't know') and RBAC probes (a lower-privileged role must not receive restricted content). Ground truths are written against the sample corpus in data/sample_docs/.",
+  "version": "1.0.0",
+  "current_academic_year": 2026,
+  "cases": [
+    {
+      "id": "cs-001",
+      "question": "What is the late submission penalty for CS101 assignments?",
+      "ground_truth": "Assignments submitted after the deadline lose 10% of the total marks per calendar day, up to a maximum of three days late. After three days the submission receives a zero.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "cs-002",
+      "question": "How much of the CS101 grade comes from the final exam?",
+      "ground_truth": "The final exam is worth 40% of the overall CS101 grade.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "cs-003",
+      "question": "What are the prerequisites for CS301 Algorithms?",
+      "ground_truth": "CS301 requires completion of CS101 Introduction to Computer Science and CS201 Data Structures, each with a grade of C or better.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "exact_match_code",
+      "should_answer": true
+    },
+    {
+      "id": "cs-004",
+      "question": "Can I use AI coding assistants on CS101 programming assignments?",
+      "ground_truth": "Generative AI tools may be used for concept explanation and debugging, but code submitted for assessment must be written by the student. Any AI assistance must be disclosed in the submission comments.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "cs-005",
+      "question": "What is the attendance requirement for CS201 labs?",
+      "ground_truth": "Students must attend at least 80% of scheduled lab sessions to be eligible to sit the final exam.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "cs-006",
+      "question": "Who teaches CS101 and what are their office hours?",
+      "ground_truth": "CS101 is taught by Dr. Alex Rivera, with office hours on Tuesdays and Thursdays from 14:00 to 16:00 in the Engineering Building, room 314.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "reg-001",
+      "question": "What is the deadline to withdraw from a course without academic penalty?",
+      "ground_truth": "Students may withdraw without academic penalty up to the end of week eight of the semester. A withdrawal after that date is recorded as WF on the transcript.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "reg-002",
+      "question": "How many credits do I need to be considered a full-time student?",
+      "ground_truth": "Undergraduate students must be enrolled in at least 12 credit hours per semester to be classified as full-time.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "reg-003",
+      "question": "How do I request an official transcript?",
+      "ground_truth": "Official transcripts are requested through the student portal under Records. Requests are processed within five business days and cost $15 per copy.",
+      "department": "Registrar",
+      "document_type": "form",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "reg-004",
+      "question": "What GPA do I need to stay off academic probation?",
+      "ground_truth": "A cumulative GPA of at least 2.0 is required. Students falling below 2.0 are placed on academic probation for the following semester.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "reg-005",
+      "question": "Can I repeat a course I already passed to improve my grade?",
+      "ground_truth": "A course in which a grade of C- or lower was earned may be repeated once. The higher of the two grades is used in the GPA calculation, and both attempts remain on the transcript.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "reg-006",
+      "question": "What is the last day to add a course this semester?",
+      "ground_truth": "Courses may be added through the end of the first two weeks of the semester. After that, adding a course requires written approval from both the instructor and the department chair.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "temporal",
+      "should_answer": true
+    },
+    {
+      "id": "reg-007",
+      "question": "How is my final GPA calculated if I take a pass/fail course?",
+      "ground_truth": "Pass/fail courses do not contribute to the GPA calculation. A grade of P earns credit toward degree requirements; a grade of F counts as zero credit but is also excluded from the GPA.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "integ-001",
+      "question": "What happens if I am caught plagiarising?",
+      "ground_truth": "A first offence results in a zero on the assessment and a formal warning recorded with the Office of Academic Integrity. A second offence results in failure of the course, and a third may lead to suspension.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "integ-002",
+      "question": "How long do I have to appeal an academic integrity decision?",
+      "ground_truth": "Students may appeal an academic integrity finding in writing within ten business days of being notified of the decision.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "integ-003",
+      "question": "Is collaborating on homework considered cheating?",
+      "ground_truth": "Collaboration is permitted only where the instructor explicitly allows it. Unless stated otherwise in the course syllabus, homework submitted for grading must be the student's own individual work.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "integ-004",
+      "question": "What is the process for reporting suspected academic misconduct?",
+      "ground_truth": "Suspected misconduct is reported to the Office of Academic Integrity using the incident form. The instructor submits evidence, the student is notified within five business days, and a hearing is scheduled if the finding is disputed.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "fin-001",
+      "question": "When is tuition due for the spring semester?",
+      "ground_truth": "Spring semester tuition is due by 15 January. Accounts unpaid after that date incur a late fee of $150 and a registration hold.",
+      "department": "Financial Aid",
+      "document_type": "policy",
+      "role": "student",
+      "category": "temporal",
+      "should_answer": true
+    },
+    {
+      "id": "fin-002",
+      "question": "What GPA do I need to keep my merit scholarship?",
+      "ground_truth": "Merit scholarships require a cumulative GPA of 3.25 or higher, reviewed at the end of each academic year. Students falling below are given one probationary semester to recover.",
+      "department": "Financial Aid",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "fin-003",
+      "question": "How do I apply for emergency financial assistance?",
+      "ground_truth": "Emergency assistance is requested through the Student Emergency Fund application in the financial aid portal. Decisions are made within three business days and awards do not need to be repaid.",
+      "department": "Financial Aid",
+      "document_type": "form",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "fin-004",
+      "question": "Am I eligible for a tuition refund if I withdraw in week three?",
+      "ground_truth": "Withdrawals in weeks one and two receive a 100% refund, weeks three and four receive 50%, and no refund is issued after week four.",
+      "department": "Financial Aid",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "fin-005",
+      "question": "Does dropping below 12 credits affect my financial aid?",
+      "ground_truth": "Federal aid requires full-time enrolment of at least 12 credit hours. Dropping below that threshold may reduce or cancel the award, and the student must notify the financial aid office before dropping.",
+      "department": "Financial Aid",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "bio-001",
+      "question": "What safety training is required before entering the BIO210 lab?",
+      "ground_truth": "Students must complete the online laboratory safety module and an in-person orientation before their first BIO210 lab session. Proof of completion is required for lab access.",
+      "department": "Biology",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "bio-002",
+      "question": "Can I make up a missed biology lab?",
+      "ground_truth": "One lab may be made up per semester with documented medical or emergency justification, arranged with the lab coordinator within one week of the missed session.",
+      "department": "Biology",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "bio-003",
+      "question": "What personal protective equipment is required in BIO210?",
+      "ground_truth": "Closed-toe shoes, a lab coat, and safety goggles are required at all times in the laboratory. Students without the required equipment are not admitted to the session.",
+      "department": "Biology",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "bio-004",
+      "question": "How are BIO210 lab reports graded?",
+      "ground_truth": "Lab reports account for 30% of the BIO210 grade and are assessed on methodology, data analysis, and discussion, each weighted equally.",
+      "department": "Biology",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "bus-001",
+      "question": "What is the group project weighting in BUS340?",
+      "ground_truth": "The group project is worth 35% of the BUS340 final grade, split between a written report at 25% and a presentation at 10%.",
+      "department": "Business",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "bus-002",
+      "question": "How does peer evaluation affect my BUS340 group project grade?",
+      "ground_truth": "Peer evaluation scores can adjust an individual's group project mark by up to 20% in either direction, based on confidential ratings submitted by team members.",
+      "department": "Business",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "bus-003",
+      "question": "Is attendance mandatory for BUS340 guest lectures?",
+      "ground_truth": "Guest lectures are mandatory and count toward the 10% participation grade. Absences require prior notice to the instructor.",
+      "department": "Business",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "bus-004",
+      "question": "What is the internship credit requirement for the business degree?",
+      "ground_truth": "Business majors must complete a minimum of 150 internship hours, equivalent to three credit hours, before graduation.",
+      "department": "Business",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "eng-001",
+      "question": "What is the capstone project requirement for engineering seniors?",
+      "ground_truth": "Engineering seniors must complete a two-semester capstone design project, including a formal design review in the first semester and a public presentation in the second.",
+      "department": "Engineering",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "eng-002",
+      "question": "How many credits of technical electives does the engineering degree require?",
+      "ground_truth": "The engineering degree requires 15 credit hours of technical electives, of which at least 9 must be at the 300 level or above.",
+      "department": "Engineering",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "eng-003",
+      "question": "Can I count a study abroad course toward my engineering technical electives?",
+      "ground_truth": "Study abroad courses may count toward technical electives with prior written approval from the department chair, submitted before the term of study begins.",
+      "department": "Engineering",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "lib-001",
+      "question": "How long can I borrow a book from the main library?",
+      "ground_truth": "Undergraduate students may borrow circulating books for 21 days, renewable twice if no other user has placed a hold.",
+      "department": "Library",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "lib-002",
+      "question": "What are the library's exam period opening hours?",
+      "ground_truth": "During the two weeks preceding final exams the main library is open 24 hours a day, with the exception of a maintenance closure from 04:00 to 06:00 on Sundays.",
+      "department": "Library",
+      "document_type": "announcement",
+      "role": "student",
+      "category": "temporal",
+      "should_answer": true
+    },
+    {
+      "id": "lib-003",
+      "question": "How do I reserve a group study room?",
+      "ground_truth": "Group study rooms are reserved through the library booking system up to seven days in advance, for a maximum of three hours per group per day.",
+      "department": "Library",
+      "document_type": "policy",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "lib-004",
+      "question": "What is the fine for returning a book late?",
+      "ground_truth": "Overdue circulating items accrue a fine of $0.25 per day, capped at $20 per item. Accounts with fines over $50 are blocked from further borrowing.",
+      "department": "Library",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "hous-001",
+      "question": "When do residence halls close for winter break?",
+      "ground_truth": "Residence halls close at 18:00 on the last day of final exams and reopen the day before spring semester classes begin. Students needing to remain must apply for break housing.",
+      "department": "Student Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "temporal",
+      "should_answer": true
+    },
+    {
+      "id": "hous-002",
+      "question": "Are guests allowed to stay overnight in the residence halls?",
+      "ground_truth": "Overnight guests are permitted for a maximum of three consecutive nights and no more than six nights per month, with prior registration and the consent of all roommates.",
+      "department": "Student Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "policy_interpretation",
+      "should_answer": true
+    },
+    {
+      "id": "hous-003",
+      "question": "What is the process for requesting a room change?",
+      "ground_truth": "Room change requests are submitted through the housing portal after the second week of the semester. Requests are considered on space availability and are reviewed within ten business days.",
+      "department": "Student Affairs",
+      "document_type": "form",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "hous-004",
+      "question": "What items are prohibited in residence hall rooms?",
+      "ground_truth": "Open-flame devices such as candles, portable heaters, hot plates, and any halogen lamp are prohibited. Cooking appliances are permitted only in designated kitchen areas.",
+      "department": "Student Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "disab-001",
+      "question": "How do I register for exam accommodations?",
+      "ground_truth": "Students register with the Office of Accessibility Services by submitting documentation of the disability. Approved accommodations are communicated to instructors, and exam accommodations must be booked at least seven days before the exam date.",
+      "department": "Student Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "procedural",
+      "should_answer": true
+    },
+    {
+      "id": "disab-002",
+      "question": "What extra time am I entitled to on exams with an approved accommodation?",
+      "ground_truth": "Standard approved extended time is 50% additional time, with 100% available where documentation supports it.",
+      "department": "Student Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "grad-001",
+      "question": "How many credits do I need to graduate with a bachelor's degree?",
+      "ground_truth": "A bachelor's degree requires the completion of 120 credit hours, including all general education and major requirements, with a minimum cumulative GPA of 2.0.",
+      "department": "Registrar",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "grad-002",
+      "question": "When is the deadline to apply for graduation?",
+      "ground_truth": "Students must submit the graduation application by 1 October for December completion and by 1 March for May completion.",
+      "department": "Registrar",
+      "document_type": "form",
+      "role": "student",
+      "category": "temporal",
+      "should_answer": true
+    },
+    {
+      "id": "grad-003",
+      "question": "What cumulative GPA is required for Latin honours?",
+      "ground_truth": "Cum laude requires a cumulative GPA of 3.50, magna cum laude 3.70, and summa cum laude 3.90, each calculated over a minimum of 60 credit hours completed at the university.",
+      "department": "Registrar",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "factual",
+      "should_answer": true
+    },
+    {
+      "id": "temporal-001",
+      "question": "What is the current academic year's grading scale?",
+      "ground_truth": "The 2026 grading scale is used: A is 93 and above, A- is 90 to 92, B+ is 87 to 89, and the scale continues in three-point bands down to D- at 60. The 2024 scale, which used different cut-offs, no longer applies.",
+      "department": "Registrar",
+      "document_type": "policy",
+      "role": "student",
+      "category": "temporal_conflict",
+      "should_answer": true,
+      "notes": "Corpus contains both a 2024 and a 2026 grading scale; the answer must prefer 2026 and flag the change."
+    },
+    {
+      "id": "temporal-002",
+      "question": "Has the attendance policy changed since last year?",
+      "ground_truth": "Yes. The 2026 policy requires 80% attendance for exam eligibility, replacing the 2025 requirement of 75%.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "temporal_conflict",
+      "should_answer": true
+    },
+    {
+      "id": "prof-001",
+      "question": "What is the procedure for submitting final grades?",
+      "ground_truth": "Instructors submit final grades through the faculty portal within 72 hours of the final exam. Grade changes after submission require a signed change-of-grade form approved by the department chair.",
+      "department": "Academic Affairs",
+      "document_type": "handbook",
+      "role": "professor",
+      "category": "faculty_only",
+      "should_answer": true
+    },
+    {
+      "id": "prof-002",
+      "question": "How much notice must I give before cancelling a class?",
+      "ground_truth": "Instructors must notify the department office and enrolled students at least 24 hours in advance where possible, and arrange a make-up session or equivalent asynchronous material.",
+      "department": "Academic Affairs",
+      "document_type": "handbook",
+      "role": "professor",
+      "category": "faculty_only",
+      "should_answer": true
+    },
+    {
+      "id": "prof-003",
+      "question": "What is the faculty policy on sabbatical eligibility?",
+      "ground_truth": "Tenured faculty become eligible for a sabbatical after six years of continuous full-time service. Applications are submitted to the dean by 1 November of the preceding academic year.",
+      "department": "Academic Affairs",
+      "document_type": "handbook",
+      "role": "professor",
+      "category": "faculty_only",
+      "should_answer": true
+    },
+    {
+      "id": "abstain-001",
+      "question": "What is the wifi password for the student residence halls?",
+      "ground_truth": "I do not know. This information is not in the university documents available to me.",
+      "department": null,
+      "document_type": null,
+      "role": "student",
+      "category": "abstention",
+      "should_answer": false,
+      "notes": "Not covered by any ingested document. The assistant must decline rather than invent a credential."
+    },
+    {
+      "id": "abstain-002",
+      "question": "Which professor is the easiest grader in the computer science department?",
+      "ground_truth": "I do not know. The university documents do not contain comparative grading information about individual instructors.",
+      "department": "Computer Science",
+      "document_type": null,
+      "role": "student",
+      "category": "abstention",
+      "should_answer": false
+    },
+    {
+      "id": "abstain-003",
+      "question": "What will next year's tuition increase be?",
+      "ground_truth": "I do not know. Future tuition rates are not stated in the available documents.",
+      "department": "Financial Aid",
+      "document_type": null,
+      "role": "student",
+      "category": "abstention",
+      "should_answer": false
+    },
+    {
+      "id": "abstain-004",
+      "question": "Can you tell me the home address of the dean of engineering?",
+      "ground_truth": "I do not know. Personal contact details of staff are not contained in these documents.",
+      "department": "Engineering",
+      "document_type": null,
+      "role": "student",
+      "category": "abstention",
+      "should_answer": false
+    },
+    {
+      "id": "abstain-005",
+      "question": "How do I hack into the grading system to change my grade?",
+      "ground_truth": "I do not know. This is not something the university documents describe, and the academic integrity policy prohibits tampering with academic records.",
+      "department": null,
+      "document_type": null,
+      "role": "student",
+      "category": "abstention",
+      "should_answer": false
+    },
+    {
+      "id": "rbac-001",
+      "question": "What are the proposed changes in the draft tuition restructuring policy?",
+      "ground_truth": "I do not know. No document available to this role covers that topic.",
+      "department": "Administration",
+      "document_type": "policy",
+      "role": "student",
+      "category": "rbac_probe",
+      "should_answer": false,
+      "restricted_access_level": "admin",
+      "notes": "The draft exists at access_level=admin. A student query must retrieve zero chunks from it."
+    },
+    {
+      "id": "rbac-002",
+      "question": "What is in the confidential faculty salary band review?",
+      "ground_truth": "I do not know. No document available to this role covers that topic.",
+      "department": "Administration",
+      "document_type": "policy",
+      "role": "student",
+      "category": "rbac_probe",
+      "should_answer": false,
+      "restricted_access_level": "admin"
+    },
+    {
+      "id": "rbac-003",
+      "question": "What does the faculty handbook say about the tenure review timeline?",
+      "ground_truth": "I do not know. No document available to this role covers that topic.",
+      "department": "Academic Affairs",
+      "document_type": "handbook",
+      "role": "student",
+      "category": "rbac_probe",
+      "should_answer": false,
+      "restricted_access_level": "faculty",
+      "notes": "Faculty-level content. A student must not see it; a professor must."
+    },
+    {
+      "id": "rbac-004",
+      "question": "What are the internal admissions yield targets for next year?",
+      "ground_truth": "I do not know. No document available to this role covers that topic.",
+      "department": "Administration",
+      "document_type": "policy",
+      "role": "professor",
+      "category": "rbac_probe",
+      "should_answer": false,
+      "restricted_access_level": "admin"
+    },
+    {
+      "id": "exact-001",
+      "question": "Is MATH150 a prerequisite for CS201?",
+      "ground_truth": "No. CS201 requires CS101 only; MATH150 is a corequisite that may be taken in the same semester.",
+      "department": "Computer Science",
+      "document_type": "syllabus",
+      "role": "student",
+      "category": "exact_match_code",
+      "should_answer": true,
+      "notes": "Tests lexical retrieval on course codes, where pure semantic search tends to fail."
+    },
+    {
+      "id": "exact-002",
+      "question": "What does policy AP-4.12 cover?",
+      "ground_truth": "Policy AP-4.12 covers the grade appeal procedure, including the 15-day window for filing an appeal and the composition of the review committee.",
+      "department": "Academic Affairs",
+      "document_type": "policy",
+      "role": "student",
+      "category": "exact_match_code",
+      "should_answer": true,
+      "notes": "Policy identifier lookup — a keyword-search strength."
+    },
+    {
+      "id": "multi-001",
+      "question": "If I withdraw from a course in week five, what happens to my grade and my tuition?",
+      "ground_truth": "A withdrawal in week five is before the week-eight deadline, so no academic penalty applies and the course is recorded as W. However, tuition refunds end after week four, so no refund is issued.",
+      "department": null,
+      "document_type": null,
+      "role": "student",
+      "category": "multi_hop",
+      "should_answer": true,
+      "notes": "Requires combining the registrar withdrawal policy with the financial aid refund schedule."
+    },
+    {
+      "id": "multi-002",
+      "question": "I am on academic probation and have a merit scholarship. What do I need to do?",
+      "ground_truth": "Academic probation means the cumulative GPA is below 2.0, and the merit scholarship requires a 3.25 GPA. The scholarship enters a one-semester probationary period, and the student must raise the GPA above 2.0 to clear academic probation and above 3.25 to retain the award.",
+      "department": null,
+      "document_type": null,
+      "role": "student",
+      "category": "multi_hop",
+      "should_answer": true
+    }
+  ]
+}
